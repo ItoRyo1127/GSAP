@@ -44,7 +44,7 @@ onMounted(() => {
     )
     .from(".rect7", {
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       rotate: 360,
       y: -300,
       x: -300,
@@ -53,7 +53,7 @@ onMounted(() => {
     })
     .from(".rect8", {
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       rotate: 360,
       y: 300,
       x: 300,
@@ -62,7 +62,7 @@ onMounted(() => {
     })
     .from(".rect9", {
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       rotate: 360,
       y: -100,
       x: -100,
@@ -71,7 +71,7 @@ onMounted(() => {
     })
     .from(".rect10", {
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       rotate: 360,
       y: 100,
       x: 100,
