@@ -1,6 +1,11 @@
 <template>
   <div>
-    <header>animation</header>
+    <header>
+      <nav class="nav">
+        <a href="/">TOP</a>
+        <a href="/sample1">sample1</a>
+      </nav>
+    </header>
     <div class="container">
       <slot />
     </div>
@@ -12,6 +17,9 @@
 header {
   border-bottom-style: solid;
   padding: 1rem;
+}
+nav a {
+  margin: 0 30px;
 }
 footer {
   margin-top: 2rem;

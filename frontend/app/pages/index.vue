@@ -57,9 +57,6 @@ onMounted(() => {
 
 <template>
   <div class="wrap">
-    <nav class="nav">
-      <a href="/sample1">sample1</a>
-    </nav>
     <div class="container">
       <div class="example-x">
         <h1>x</h1>
