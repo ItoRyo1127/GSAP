@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { gsap } from "gsap";
-import { onMounted } from "vue";
 
 onMounted(() => {
   gsap.defaults({
@@ -56,45 +55,40 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="wrap">
-    <nav class="nav">
-      <a href="/sample1">sample1</a>
-    </nav>
-    <div class="container">
-      <div class="example-x">
-        <h1>x</h1>
-        <div class="rect"></div>
-      </div>
+  <div class="container">
+    <div class="example-x">
+      <h1>x</h1>
+      <div class="rect"></div>
+    </div>
 
-      <div class="example-y">
-        <h1>y</h1>
-        <div class="rect"></div>
-      </div>
+    <div class="example-y">
+      <h1>y</h1>
+      <div class="rect"></div>
+    </div>
 
-      <div class="example-rotate">
-        <h1>rotate</h1>
-        <div class="rect"></div>
-      </div>
+    <div class="example-rotate">
+      <h1>rotate</h1>
+      <div class="rect"></div>
+    </div>
 
-      <div class="example-scale">
-        <h1>scale</h1>
-        <div class="rect"></div>
-      </div>
+    <div class="example-scale">
+      <h1>scale</h1>
+      <div class="rect"></div>
+    </div>
 
-      <div class="example-skewX">
-        <h1>skewX</h1>
-        <div class="rect"></div>
-      </div>
+    <div class="example-skewX">
+      <h1>skewX</h1>
+      <div class="rect"></div>
+    </div>
 
-      <div class="example-complex">
-        <h1>x & scale & rotate</h1>
-        <div class="rect"></div>
-      </div>
+    <div class="example-complex">
+      <h1>x & scale & rotate</h1>
+      <div class="rect"></div>
+    </div>
 
-      <div class="example-origin">
-        <h1>transformOrigin</h1>
-        <div class="rect"></div>
-      </div>
+    <div class="example-origin">
+      <h1>transformOrigin</h1>
+      <div class="rect"></div>
     </div>
   </div>
 </template>
@@ -113,13 +107,5 @@ onMounted(() => {
   display: block;
   background: #000;
   position: relative;
-}
-
-.wrap {
-  display: flex;
-  flex-direction: column;
-}
-.nav {
-  display: block;
 }
 </style>
