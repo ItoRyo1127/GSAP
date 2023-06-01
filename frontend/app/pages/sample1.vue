@@ -18,6 +18,7 @@ onMounted(() => {
     .from(".rect4", { x: 32, y: 32, opacity: 0, duration: 0.5, scale: 1.5 })
     .from(".rect5", { y: -32, opacity: 0, duration: 0.5, rotate: 360 })
     .from(".rect6", { x: 32, y: 32, opacity: 0, duration: 0.5, scale: 1.5 })
+    // .from(".rect7", { opacity: 0, duration: 0.5 })
     .set("h1", { textContent: "Hide Motion" }, "+=1") // 1秒待機
     .to(
       ".rect1",
@@ -40,7 +41,8 @@ onMounted(() => {
       ".rect6",
       { x: 32, y: 32, opacity: 0.5, duration: 0.5, scale: 100 },
       "-=0.4"
-    );
+    )
+    .from(".rect7", { opacity: 0, duration: 1 });
 });
 </script>
 
@@ -52,6 +54,7 @@ onMounted(() => {
     <div class="rect rect4">か</div>
     <div class="rect rect5">さ</div>
     <div class="rect rect6">ん</div>
+    <div class="rect rect7">🎋</div>
   </div>
 </template>
 
