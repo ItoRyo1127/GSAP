@@ -99,7 +99,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));

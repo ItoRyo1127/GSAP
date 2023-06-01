@@ -1,111 +1,64 @@
 <script lang="ts" setup>
 import { gsap } from "gsap";
+import { onMounted } from "vue";
 
 onMounted(() => {
   gsap.defaults({
     repeat: -1, // 無限に繰り返し
-    repeatDelay: 5, // 繰り返し時に0.5秒の待機,
+    repeatDelay: 0, // 繰り返し時に0秒の待機,
     ease: "power4.inOut",
   });
 
-  gsap.to(".example-x .rect", {
-    x: 40,
-    duration: 2,
-  });
-
-  gsap.to(".example-y .rect", {
-    y: 40,
-    delay: 1,
-    duration: 2,
-  });
-
-  gsap.to(".example-rotate .rect", {
-    rotate: 360,
-    delay: 2,
-    duration: 2,
-  });
-
-  gsap.to(".example-scale .rect", {
-    scale: 0.5,
-    delay: 3,
-    duration: 2,
-  });
-
-  gsap.to(".example-skewX .rect", {
-    skewX: 30,
-    delay: 4,
-    duration: 2,
-  });
-
-  gsap.to(".example-complex .rect", {
-    x: 100,
-    rotate: 360,
-    scale: 0.5,
-    delay: 5,
-    duration: 2,
-  });
-
-  gsap.to(".example-origin .rect", {
-    rotate: 360,
-    transformOrigin: "bottom right",
-    delay: 6,
-    duration: 2,
-  });
+  gsap
+    .timeline({ repeat: -1, repeatDelay: 0.5 })
+    .set("h1", { textContent: "Show Motion" })
+    .from(".rect1", { y: -32, opacity: 0, duration: 0.5, rotate: 360 })
+    .from(".rect2", { x: 32, y: 32, opacity: 0, duration: 0.5, scale: 1.5 })
+    .from(".rect3", { y: -32, opacity: 0, duration: 0.5, rotate: 360 })
+    .from(".rect4", { x: 32, y: 32, opacity: 0, duration: 0.5, scale: 1.5 })
+    .from(".rect5", { y: -32, opacity: 0, duration: 0.5, rotate: 360 })
+    .from(".rect6", { x: 32, y: 32, opacity: 0, duration: 0.5, scale: 1.5 })
+    .set("h1", { textContent: "Hide Motion" }, "+=1") // 1秒待機
+    .to(".rect1", { y: -32, opacity: 0, duration: 0.5, rotate: 360 }, "+=0.5")
+    .to(
+      ".rect2",
+      { x: 32, y: 32, opacity: 0, duration: 0.5, scale: 1.5 },
+      "-=0.4"
+    )
+    .to(".rect3", { y: -32, opacity: 0, duration: 0.5, rotate: 360 }, "-=0.4")
+    .to(
+      ".rect4",
+      { x: 32, y: 32, opacity: 0, duration: 0.5, scale: 1.5 },
+      "-=0.4"
+    )
+    .to(".rect5", { y: -32, opacity: 0, duration: 0.5, rotate: 360 }, "-=0.4")
+    .to(
+      ".rect6",
+      { x: 32, y: 32, opacity: 0, duration: 0.5, scale: 1.5 },
+      "-=0.4"
+    );
 });
 </script>
 
 <template>
   <div class="container">
-    <div class="example-x">
-      <h1>x</h1>
-      <div class="rect"></div>
-    </div>
-
-    <div class="example-y">
-      <h1>y</h1>
-      <div class="rect"></div>
-    </div>
-
-    <div class="example-rotate">
-      <h1>rotate</h1>
-      <div class="rect"></div>
-    </div>
-
-    <div class="example-scale">
-      <h1>scale</h1>
-      <div class="rect"></div>
-    </div>
-
-    <div class="example-skewX">
-      <h1>skewX</h1>
-      <div class="rect"></div>
-    </div>
-
-    <div class="example-complex">
-      <h1>x & scale & rotate</h1>
-      <div class="rect"></div>
-    </div>
-
-    <div class="example-origin">
-      <h1>transformOrigin</h1>
-      <div class="rect"></div>
-    </div>
+    <div class="rect rect1">こ</div>
+    <div class="rect rect2">う</div>
+    <div class="rect rect3">さ</div>
+    <div class="rect rect4">か</div>
+    <div class="rect rect5">さ</div>
+    <div class="rect rect6">ん</div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
-  gap: 32px 16px;
-  margin: 32px;
+  display: flex;
+  gap: 32px;
 }
-
 .rect {
-  width: 10vw;
-  height: 10vw;
+  font-size: 100px;
+  color: #000;
   display: block;
-  background: #000;
-  position: relative;
 }
 </style>
